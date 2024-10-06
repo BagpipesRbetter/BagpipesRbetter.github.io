@@ -1,2 +1,3 @@
 # BagpipesRbetter.github.io
-My Site
+The Ultimate Site For All Things Evan Barclay
+
