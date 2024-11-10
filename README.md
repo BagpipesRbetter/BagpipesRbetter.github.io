@@ -1,5 +1,12 @@
 # The Ultimate Site For All Things Evan Barclay!
-hi there! I'm Evan Barclay, a 18 year old College student from the US. I'm currently a student at Utah Valley University, studying Computer Science. If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.(I've also included these and many more links below) I hope you enjoy my site!
+hi there! I'm Evan Barclay, a 18 year old College student from the US.
+I'm currently a student at Utah Valley University, studying Computer Science.
+If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
+(I've also included these and many more links below)
+I hope you enjoy my site!
+<p float="left">
+  <img src="https://i.redd.it/dnhesajvzlsd1.gif" width="100" />
+</p>
 ## Links
 make sure to check out my other sites and socials:
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
