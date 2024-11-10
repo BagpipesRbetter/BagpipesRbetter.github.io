@@ -4,9 +4,10 @@ I'm currently a student at Utah Valley University, studying Computer Science.
 If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
 (I've also included these and many more links below)
 I hope you enjoy my site!
-<p float="left">
+<p float="right">
   <img src="https://i.redd.it/dnhesajvzlsd1.gif" width="100" />
 </p>
+
 ## Links
 make sure to check out my other sites and socials:
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
@@ -17,8 +18,9 @@ make sure to check out my other sites and socials:
 - <a href="https://bagpipesrbetter.github.io/Store">**Store**(this is where u can buy stuff from me)</a>
 # Portfiolio
 ## Things Im Working On
+this is the stuff im activly working on:
 - <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode</a>
 
 ## things That I've Done (**Past**)
+just a small colection of things that I've done in the past:
 - <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python</a>
--
