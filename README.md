@@ -26,22 +26,24 @@ just a small colection of things that I've done in the past:
 
 ## My Freetime
 what I do when I'm not working:
-- Playing Pames
--- Minecraft
--- Mario Kart
--- BeamNG.drive
--- Fallout (4 and new vegas)
--- Warthunder
-- Watching Anime
--- Attack on Titan
--- DanDaDan
--- Vinland Saga
--- Spy x Family
-- watching movies
--- Star Wars: Revenge of the Sith
--- Inglourious Basterds
--- How to Train Your Dragon
-- Watching Youtube
--- QuinnBoBin
--- Linus Tech Tips
--- Bringus Studios
+- Playing Games:
+1. Minecraft
+2. Mario Kart
+3. BeamNG.drive
+4. Fallout (4 and new vegas)
+5. Warthunder
+6. General Emulation(i like the tinkering aspect)
+- Watching Anime:
+1. Attack on Titan
+2. DanDaDan
+3. Vinland Saga
+4. Spy x Family
+5. Somtimes Alya Hides Her Feelings In Russian
+- Watching Movies:
+1. Star Wars: Revenge of the Sith
+2. Inglourious Basterds
+3. How to Train Your Dragon
+- Watching Youtube:
+1. QuinnBoBin
+2. Linus Tech Tips
+3. Bringus Studios
