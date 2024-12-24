@@ -1,5 +1,5 @@
+<link rel="stylesheet" href="style.css">
 ![Evan In A Forest With Lake](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/favicon.jpeg)
-<style>p { font: SF Mono; }</style>
 hi there! I'm Evan Barclay, a 18 year old College student from the US.
 I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
 If you want to contact me, you can find me on <a href="https://discordapp.com/users/773342404630675518">Discord at BagpipesRbetter</a>, or you can email me at <a href="mailto:evanjbarclay@gmail.com">evanjbarclay@gmail.com</a>.
@@ -14,7 +14,7 @@ make sure to check out my other sites and socials:
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
 - <a href="https://bagpipesrbetter.github.io/Store">**Store**(this is where u can buy stuff from me)</a>
-
+- <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social</a>
 # Portfolio
 This is my portfolio, where you can see my projects and stuff. ;)
 
@@ -25,8 +25,8 @@ this is the stuff im activly working on:
 
 ## things That I've Done {**Past**}
 just a small colection of things that I've done in the past:
-- <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python</a>
-- <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode</a>
+- <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python(WIP)</a>
+- <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode(WIP)</a>
 - a tech internship at American Fork High School
 - a google appscript that manages some of the teacher logs on students, this was done at my internship at American Fork High School
 - a IT internship with IT director at American Fork High School
@@ -35,6 +35,8 @@ just a small colection of things that I've done in the past:
 ## SKILLS!
 I have a lot of skills, here are some of them:
 - Python
+- html
+- css
 - Arduino Programing
 - General Raspberry Pi Programming
 - linux
@@ -44,7 +46,7 @@ I have a lot of skills, here are some of them:
 - github
 - troubleshooting
 - general programming
-
+- problem solving
 ## My Freetime
 what I do when I'm not working:
 - Playing Games:
@@ -55,9 +57,9 @@ what I do when I'm not working:
 5. Warthunder
 6. General Emulation(i like the tinkering aspect)
 - Watching Anime:
-1. Attack on Titan
-2. DanDaDan
-3. Vinland Saga
+1. DanDaDan
+2. Vinland Saga
+3. Spy X Family
 - Watching Movies:
 1. Star Wars: Revenge of the Sith
 2. Inglourious Basterds
