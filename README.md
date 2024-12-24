@@ -4,7 +4,6 @@ I'm currently a student at Utah Valley University(and American Fork High School)
 If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
 (I've also included these and many more links below)
 I hope you enjoy my site!
-![cat](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/a-cat-is-standing-on-its-hind-legs-and-looking-at-the-camera-on-a-white-background.gif)
 ## Links
 make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
@@ -20,7 +19,8 @@ This is my portfolio, where you can see my projects and stuff. ;)
 
 ## Things Im Working On
 this is the stuff im activly working on:
-- nothing right now 🤷🏻‍♂️
+- nothing right now 🤷🏻‍♂️ open to work tho 😉
+
 
 ## things That I've Done {**Past**}
 just a small colection of things that I've done in the past:
