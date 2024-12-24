@@ -2,7 +2,7 @@
 ---
 hi there! I'm Evan Barclay, a 18 year old College student from the US.
 I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
-If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
+If you want to contact me, you can find me on <a href="https://discordapp.com/users/773342404630675518">Discord at BagpipesRbetter</a>, or you can email me at <a href="mailto:evanjbarclay@gmail.com">evanjbarclay@gmail.com</a>.
 (I've also included these and many more links below)
 I hope you enjoy my site!
 ## Links
