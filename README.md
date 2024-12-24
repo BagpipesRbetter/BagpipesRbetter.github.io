@@ -3,7 +3,7 @@ I'm currently a student at Utah Valley University(and American Fork High School)
 If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
 (I've also included these and many more links below)
 I hope you enjoy my site!
-
+![[a-cat-is-standing-on-its-hind-legs-and-looking-at-the-camera-on-a-white-background.gif]]
 ## Links
 make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
@@ -21,10 +21,14 @@ This is my portfolio, where you can see my projects and stuff. ;)
 this is the stuff im activly working on:
 - nothing right now 🤷🏻‍♂️
 
-## things That I've Done {**Past**, most unfinished lol ;) }
+## things That I've Done {**Past**}
 just a small colection of things that I've done in the past:
 - <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python</a>
 - <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode</a>
+- a tech internship at American Fork High School
+- a google appscript that manages some of the teacher logs on students, this was done at my internship at American Fork High School
+- a IT internship with IT director at American Fork High School
+
 
 ## SKILLS!
 I have a lot of skills, here are some of them:
@@ -52,7 +56,6 @@ what I do when I'm not working:
 1. Attack on Titan
 2. DanDaDan
 3. Vinland Saga
-
 - Watching Movies:
 1. Star Wars: Revenge of the Sith
 2. Inglourious Basterds
