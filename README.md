@@ -38,7 +38,7 @@ I have a lot of skills, here are some of them:
 - Arduino Programing
 - General Raspberry Pi Programming
 - linux
--macOS
+- macOS
 - Windows
 - git
 - github
