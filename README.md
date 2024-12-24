@@ -1,4 +1,4 @@
-![Evan In A Forest With Lake](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/favicon.ico)
+![Evan In A Forest With Lake](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/favicon.jpeg)
 ---
 hi there! I'm Evan Barclay, a 18 year old College student from the US.
 I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
