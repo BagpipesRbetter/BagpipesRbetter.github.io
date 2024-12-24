@@ -1,10 +1,10 @@
-![Evan In A Forest With Lake](https://raw.github.com/BagpipesRbetter/BagpipesRbetter.github.io/blob/main/favicon.ico)
+![Evan In A Forest With Lake](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/favicon.ico)
 hi there! I'm Evan Barclay, a 18 year old College student from the US.
 I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
 If you want to contact me, you can find me on Discord at BagpipesRbetter, or you can email me at evanjbarclay@gmail.com.
 (I've also included these and many more links below)
 I hope you enjoy my site!
-![cat](https://raw.github.com/BagpipesRbetter/BagpipesRbetter.github.io/blob/main/a-cat-is-standing-on-its-hind-legs-and-looking-at-the-camera-on-a-white-background.gif)
+![cat](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/a-cat-is-standing-on-its-hind-legs-and-looking-at-the-camera-on-a-white-background.gif)
 ## Links
 make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
