@@ -1,13 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
-
-body {
+body,
+html {
     font-family: "JetBrains Mono", monospace !important;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.post-title,
+.site-title {
     font-family: "JetBrains Mono", monospace !important;
 }
