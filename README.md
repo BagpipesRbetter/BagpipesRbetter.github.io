@@ -15,6 +15,7 @@ make sure to check out my other sites and socials:
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
 - <a href="https://bagpipesrbetter.github.io/Store">**Store**(this is where u can buy stuff from me)</a>
 - <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social</a>
+
 # Portfolio
 This is my portfolio, where you can see my projects and stuff. ;)
 
