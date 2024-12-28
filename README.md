@@ -10,6 +10,7 @@ make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
 - <a href="https://github.com/BagpipesRbetter">GitHub: BagpipesRbetter</a>
 - <a href="https://lnkedin.com/evanjbarclay">LinkedIn: Evan Barclay</a>
+- <a href="https://bagpipesRbetter.github.io/Resume"> **Resume**</a>
 - <a href="https://instagram.com/evanjbarclay/">Instagram: evanjbarclay</a>
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
@@ -49,6 +50,7 @@ I have a lot of skills, here are some of them:
 - troubleshooting
 - general programming
 - problem solving
+
 ## My Freetime
 what I do when I'm not working:
 - Playing Games:
