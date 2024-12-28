@@ -26,11 +26,12 @@ this is the stuff im activly working on:
 
 ## things That I've Done {**Past**}
 just a small colection of things that I've done in the past:
-- <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python(WIP)</a>
-- <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode(WIP)</a>
-- a tech internship at American Fork High School
-- a google appscript that manages some of the teacher logs on students, this was done at my internship at American Fork High School
-- a IT internship with IT director at American Fork High School
+- <a href="https://github.com/BagpipesRbetter/PeruAi">A Chatbot Using Ollama In Python(WIP).</a>
+- <a href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode">A SaintCon24 ESP32 Recode(WIP).</a>
+- a Software Dev And Programing internship at American Fork High School. (See Linkedin<a href="https://lnkedin.com/evanjbarclay"> For More Info</a>)
+- Developed a Google Apps Script to manage and streamline teacher logs for student records during my internship at American Fork High School.
+- a IT internship with IT director at American Fork High School. (See Linkedin<a href="https://lnkedin.com/evanjbarclay"> For More Info</a>)
+-
 
 
 ## SKILLS!
