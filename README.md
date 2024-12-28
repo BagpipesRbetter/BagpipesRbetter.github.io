@@ -31,7 +31,7 @@ just a small colection of things that I've done in the past:
 - a Software Dev And Programing internship at American Fork High School. (See Linkedin<a href="https://lnkedin.com/evanjbarclay"> For More Info</a>)
 - Developed a Google Apps Script to manage and streamline teacher logs for student records during my internship at American Fork High School.
 - a IT internship with IT director at American Fork High School. (See Linkedin<a href="https://lnkedin.com/evanjbarclay"> For More Info</a>)
--
+
 
 
 ## SKILLS!
