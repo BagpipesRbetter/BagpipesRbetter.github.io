@@ -4,7 +4,7 @@ hi there! I'm Evan Barclay, a 18 year old College student from the US.
 I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
 If you want to contact me, as far as contact goes,you can find me on alll of the links below ↓ , or you can email me at <a href="mailto:evanjbarclay@gmail.com">evanjbarclay@gmail.com</a>.
 I hope you enjoy my site!
-<div class="centered"><br><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/Resume">**Resume**</a></button><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/store">**Store**</a></button><br></div>
+<br><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/Resume">**Resume**</a></button><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/store">**Store**</a></button><br>
 ## Links
 make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
