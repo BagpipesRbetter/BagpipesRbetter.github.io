@@ -56,5 +56,6 @@ h6,
     transform: scale(1.05) rotate(-1deg);
 }
 .centered {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
