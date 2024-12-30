@@ -60,4 +60,5 @@ h6,
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
+    margin 10px;
 }
