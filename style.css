@@ -42,6 +42,7 @@ h6,
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin: 5px;
 }
 
 .button-33:hover {
