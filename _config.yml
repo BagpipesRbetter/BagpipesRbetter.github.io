@@ -4,3 +4,4 @@ description: A 18 year old College student from the US.
 favicon: favicon.jpeg
 include:
   - style.css
+  - README.md
