@@ -5,7 +5,11 @@ I'm currently a student at Utah Valley University(and American Fork High School)
 If you want to contact me, as far as contact goes,you can find me on alll of the links below ↓ , or you can email me at <a href="mailto:evanjbarclay@gmail.com">evanjbarclay@gmail.com</a>.
 I hope you enjoy my site!
 
-<br><div class="centered"><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/Resume">**Resume**</a></button><button class="button-33" role="button"><a href="https://bagpipesRbetter.github.io/store">**Store**</a></button></div><br>
+<br>
+<div class="centered"><button class="button-33" role="button">
+<a href="https://bagpipesRbetter.github.io/Resume/">**Resume**</a></button><button class="button-33" role="button"><a href="https://bagpipesrbetter.github.io/Store/">**Store**</a></button>
+</div>
+<br>
 
 ## Links
 make sure to check out my other sites and socials:
