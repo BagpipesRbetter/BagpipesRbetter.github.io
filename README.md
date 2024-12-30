@@ -13,7 +13,6 @@ make sure to check out my other sites and socials:
 - <a href="https://instagram.com/evanjbarclay/">Instagram: evanjbarclay</a>
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
-- <a href="https://bagpipesrbetter.github.io/Store">**Store**(this is where u can buy stuff from me)</a>
 - <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social (dont post much but its there</a>
 
 # Portfolio
