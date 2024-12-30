@@ -1,6 +1,12 @@
 body,
 html {
     font-family: "JetBrains Mono", monospace !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Optional, if you want to stack items vertically */
+    min-height: 100vh; /* Ensures the body takes the full viewport height */
+    margin: 0;
 }
 
 h1,
@@ -27,12 +33,6 @@ h6,
     color: #8be9fd;
     cursor: pointer;
     display: inline-block;
-    font-family:
-        CerebriSans-Regular,
-        -apple-system,
-        system-ui,
-        Roboto,
-        sans-serif;
     padding: 7px 20px;
     text-align: center;
     text-decoration: none;
@@ -56,5 +56,11 @@ h6,
     transform: scale(1.05) rotate(-1deg);
 }
 .centered {
-    margin: auto;
+    .centered {
+        display: flex;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically (optional) */
+        gap: 10px; /* Adds spacing between buttons */
+        margin: auto; /* Centers the div itself if needed */
+    }
 }
