@@ -7,7 +7,7 @@ I hope you enjoy my site!
 
 <br>
 <div class="centered"><button class="button-33" role="button">
-<a href="https://bagpipesRbetter.github.io/Resume/">**Resume**</a></button><button class="button-33" role="button"><a href="https://bagpipesrbetter.github.io/Store/">**Store**</a></button>
+<a href="https://bagpipesRbetter.github.io/Resume/">Resume</a></button><button class="button-33" role="button"><a href="https://bagpipesrbetter.github.io/Store/">Store</a></button>
 </div>
 <br>
 
@@ -19,7 +19,7 @@ make sure to check out my other sites and socials:
 - <a href="https://instagram.com/evanjbarclay/">Instagram: evanjbarclay</a>
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
-- <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social (dont post much but its there</a>
+- <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social</a>
 
 # Portfolio
 This is my portfolio, where you can see my projects and stuff that I've done.

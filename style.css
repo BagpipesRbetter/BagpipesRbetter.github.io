@@ -30,7 +30,7 @@ h6,
         rgba(44, 187, 99, 0.15) 0 4px 8px,
         rgba(44, 187, 99, 0.15) 0 8px 16px,
         rgba(44, 187, 99, 0.15) 0 16px 32px;
-    color: #8be9fd;
+    color: #2b2b2b; /* Updated for darker text */
     cursor: pointer;
     display: inline-block;
     padding: 7px 20px;
@@ -54,6 +54,7 @@ h6,
         rgba(44, 187, 99, 0.25) 0 8px 16px,
         rgba(44, 187, 99, 0.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
+    color: #000; /* Even darker text on hover */
 }
 
 .centered {
@@ -61,4 +62,5 @@ h6,
     left: 50%;
     transform: translate(-50%, 0%);
     margin 10px;
+    margin-top: 0px;
 }
