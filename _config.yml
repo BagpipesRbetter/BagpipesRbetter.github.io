@@ -5,3 +5,4 @@ favicon: favicon.jpeg
 include:
   - style.css
   - README.md
+footer: "Footer content"
