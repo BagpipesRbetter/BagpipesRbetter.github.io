@@ -22,8 +22,6 @@ make sure to check out my other sites and socials:
 - <a href="https://bsky.app/profile/evanjbarclay.bsky.social">Bluesky: @evanjbarclay.bsky.social</a>
 
 # Portfolio
-This is my portfolio, where you can see my projects and stuff that I've done.
-
 ## Things Im Working On
 this is the stuff im activly working on:
 - nothing right now 🤷🏻‍♂️ open to work tho 😉
@@ -51,6 +49,7 @@ I have a lot of skills, here are some of them:
 - troubleshooting
 - general programming
 - problem solving
+- nintendo console modding (Wii, WiiU, 3ds)
 
 ## My Freetime
 what I do when I'm not working:
@@ -59,14 +58,16 @@ what I do when I'm not working:
 2. Mario Kart
 3. BeamNG.drive
 4. Fallout (4 and new vegas)
-5. Warthunder
-6. General Emulation(i like the tinkering aspect)
-7. Marvel Rivals (yes ima a jeff main)
+5. *Warthunder* (my fav rn)
+6. General Emulation
+7. Marvel Rivals
 - Watching Anime:
 1. DanDaDan
 2. Vinland Saga
-3. Jujutsu Kaisen
-4. Spy X Family
+3. Saiki K
+4. Delicious In Dungeon
+5. Jujutsu Kaisen
+6. Spy X Family
 - Watching Movies:
 1. Star Wars: Revenge of the Sith
 2. Inglourious Basterds
@@ -74,3 +75,4 @@ what I do when I'm not working:
 - Watching Youtube:
 1. Linus Tech Tips
 2. Bringus Studios
+3. The Thought Emporium
