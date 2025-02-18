@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="style.css">
 ![Evan next to lake with mountains](https://raw.githubusercontent.com/BagpipesRbetter/BagpipesRbetter.github.io/main/me.jpeg)
 hi there! I'm Evan Barclay, a 18 year old College student from the US.
-I'm currently a student at Utah Valley University(and American Fork High School), and I'm studying Computer Science.
+I'm currently a student at Utah Valley University(and American Fork High School {graduating 2025}), and I'm studying Computer Science.
 If you want to contact me, as far as contact goes,you can find me on alll of the links below ↓ , or you can email me at <a href="mailto:evanjbarclay@gmail.com">evanjbarclay@gmail.com</a>.
 I hope you enjoy my site!
 
 <br>
 <div class="centered"><button class="button-33" role="button">
-<a href="https://bagpipesRbetter.github.io/Resume/">Resume</a></button><button class="button-33" role="button"><a href="https://bagpipesrbetter.github.io/Store/">Store</a></button>
+<a href="https://bagpipesRbetter.github.io/Resume/">Resume</a></button>
 </div>
 <br>
 
@@ -16,6 +16,7 @@ make sure to check out my other sites and socials:
 - <a href="mailto:evanjbarclay@gmail.com">Email: evanjbarclay@gmail.com</a>
 - <a href="https://github.com/BagpipesRbetter">GitHub: BagpipesRbetter</a>
 - <a href="https://lnkedin.com/evanjbarclay">LinkedIn: Evan Barclay</a>
+- <a href="https://bagpipesrbetter.github.io/Store/">Store</a>
 - <a href="https://instagram.com/evanjbarclay/">Instagram: evanjbarclay</a>
 - <a href="https://steamcommunity.com/id/BagpipesRbetter/">Steam: BagpipesRbetter</a>
 - <a href="https://discordapp.com/users/773342404630675518">Discord: BagpipesRbetter</a>
@@ -68,11 +69,19 @@ what I do when I'm not working:
 4. Delicious In Dungeon
 5. Jujutsu Kaisen
 6. Spy X Family
-- Watching Movies:
+7. Girls Und Panzer
+- Watching Movies & TV:
 1. Star Wars: Revenge of the Sith
 2. Inglourious Basterds
-3. How to Train Your Dragon
+3. Masters of the Air
+4. Indiana Jones
+5. How to Train Your Dragon
+6. Parks and Recreation
+7. Hunt for the red october
+8. Oedipus Rex (joesph campbell 1957 stage production)
 - Watching Youtube:
 1. Linus Tech Tips
 2. Bringus Studios
 3. The Thought Emporium
+4. Theo - T3.gg
+5. Miniminuteman (Milo Rossi)
