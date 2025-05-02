@@ -1,66 +1,310 @@
-body,
-html {
-    font-family: "JetBrains Mono", monospace !important;
+:root {
+    --white: #ffffffff;
+    --light-grey: #e0e0e0ff;
+    --forest-green: #2d5a27ff;
+    --leaf-green: #4a7c59ff;
+    --brown: #8b5a2bff;
+    --sky-blue: #87ceebff;
+    --ocean-blue: #1e90ffff;
+    --deep-blue: #000080ff;
+    --light-blue: #add8e6ff;
+    
+    --primary-color: var(--ocean-blue);
+    --secondary-color: var(--light-grey);
+    --background-color: var(--deep-blue);
+    --text-color: var(--white);
+    --accent-color: var(--sky-blue);
+    --button-color: var(--sky-blue);
+    --button-hover: var(--ocean-blue);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    background: linear-gradient(135deg, var(--silver-lake-blue) 0%, var(--oxford-blue) 100%);
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    color: var(--secondary-color);
+}
+
+section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column; /* Optional, if you want to stack items vertically */
-    min-height: 100vh; /* Ensures the body takes the full viewport height */
+    gap: 2rem;
+}
+
+.profile-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
     margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.post-title,
-.site-title {
-    font-family: "JetBrains Mono", monospace !important;
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    aspect-ratio: 1/1;
 }
 
-.button-33 {
-    background-color: ##8BE9FD;
-    border-radius: 100px;
-    box-shadow:
-        rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-        rgba(44, 187, 99, 0.15) 0 1px 2px,
-        rgba(44, 187, 99, 0.15) 0 2px 4px,
-        rgba(44, 187, 99, 0.15) 0 4px 8px,
-        rgba(44, 187, 99, 0.15) 0 8px 16px,
-        rgba(44, 187, 99, 0.15) 0 16px 32px;
-    color: #2b2b2b; /* Updated for darker text */
-    cursor: pointer;
-    display: inline-block;
-    padding: 7px 20px;
-    text-align: center;
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+}
+
+.contact-button, .portfolio-button {
+    padding: 0.8rem 1.5rem;
+    background: var(--button-color);
+    color: var(--deep-blue);
     text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.button-33:hover {
-    box-shadow:
-        rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-        rgba(44, 187, 99, 0.25) 0 1px 2px,
-        rgba(44, 187, 99, 0.25) 0 2px 4px,
-        rgba(44, 187, 99, 0.25) 0 4px 8px,
-        rgba(44, 187, 99, 0.25) 0 8px 16px,
-        rgba(44, 187, 99, 0.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-    color: #000; /* Even darker text on hover */
+.contact-button:hover, .portfolio-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+    background: var(--button-hover);
 }
 
-.centered {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    margin 10px;
-    margin-top: 0px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portfolio-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-item p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(33, 78, 52, 0.3);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+}
+
+.skill {
+    background: var(--button-color);
+    color: var(--deep-blue);
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+    background: var(--button-hover);
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+}
+
+.interest {
+    background: var(--button-color);
+    color: var(--deep-blue);
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    white-space: normal;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    text-decoration: none;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.interest-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.interest span {
+    font-size: 0.9rem;
+}
+
+.interest:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+    background: var(--button-hover);
+}
+
+.interest:hover .interest-image {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.contact-skills-container section {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.interests-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.interest-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.interest-column h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.interest-column .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .contact-skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .interests-container {
+        grid-template-columns: 1fr;
+    }
 }
