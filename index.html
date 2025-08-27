@@ -25,76 +25,82 @@
         width: 100vw;
         height: 100vh;
         pointer-events: none;
-        z-index: -1;
-        filter: blur(30px);
-        opacity: 0.5; /* Adjust this value between 0 and 1 to control overall blob visibility */
+        z-index: 0;
+        filter: blur(8px); /* less blurry */
+        opacity: 0.6; /* slightly visible but not overpowering */
       }
 
       .blob {
         position: absolute;
-        width: 500px;
-        height: 500px;
-        mix-blend-mode: multiply;
-        animation: blob-bounce 25s infinite alternate;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: red;
+        opacity: 0.95;
+        mix-blend-mode: normal; /* do not blend colors */
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.14);
+        animation: blob-drift 22s infinite ease-in-out;
       }
 
+      /* overlap and stack via positioning + z-index */
       .blob:nth-child(1) {
         background: #22d3ee;
-        top: 0;
-        left: 0;
+        left: 20%;
+        top: 10%;
+        z-index: 1;
         animation-delay: -2s;
       }
 
       .blob:nth-child(2) {
         background: #a3e635;
-        top: 50%;
-        right: 0;
+        left: 40%;
+        top: 18%;
+        z-index: 2;
         animation-delay: -4s;
       }
 
       .blob:nth-child(3) {
         background: #f472b6;
-        bottom: 0;
-        left: 25%;
+        left: 30%;
+        top: 38%;
+        z-index: 3;
         animation-delay: -6s;
       }
 
       .blob:nth-child(4) {
         background: #818cf8;
-        bottom: 50%;
-        right: 25%;
+        left: 50%;
+        top: 30%;
+        z-index: 4;
         animation-delay: -8s;
       }
 
       .blob:nth-child(5) {
         background: #facc15;
+        left: 45%;
         top: 50%;
-        left: 50%;
+        z-index: 5;
         animation-delay: -10s;
       }
 
       .blob:nth-child(6) {
         background: #38bdf8;
-        bottom: 0;
-        right: 0;
+        left: 60%;
+        top: 40%;
+        z-index: 6;
         animation-delay: -12s;
       }
 
-      @keyframes blob-bounce {
+      /* gentler, smaller motion so blobs stay overlapping */
+      @keyframes blob-drift {
         0% {
-          transform: translate(-100%, -100%) rotate(0deg);
-        }
-        25% {
-          transform: translate(100%, 0%) rotate(90deg);
+          transform: translate(0, 0) scale(1);
         }
         50% {
-          transform: translate(0%, 100%) rotate(180deg);
-        }
-        75% {
-          transform: translate(-50%, 50%) rotate(270deg);
+          transform: translate(40px, -30px) scale(1.03);
         }
         100% {
-          transform: translate(0%, 0%) rotate(360deg);
+          transform: translate(-30px, 20px) scale(0.98);
         }
       }
 
@@ -105,7 +111,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-black min-h-screen flex flex-col font-sans">
+  <body class="text-black min-h-screen flex flex-col font-sans">
     <div class="blob-motion">
       <div class="blob"></div>
       <div class="blob"></div>
@@ -116,54 +122,73 @@
     </div>
     <header
       id="home"
-      class="text-center bg-black text-white border-b-4 border-black uppercase font-bold tracking-widest py-10 mb-12 font-minecraftia shadow-lg"
+      class="relative z-20 text-center bg-black text-white border-b-4 border-black uppercase font-bold tracking-widest py-10 mb-12 font-minecraftia shadow-lg"
     >
       <h1 class="text-4xl mb-2 drop-shadow-lg">Hello, I'm Evan</h1>
       <p class="text-lg opacity-85 tracking-wider">IT Student & Consultant</p>
     </header>
     <main
-      class="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-8 lg:px-16 bg-transparent"
+      class="relative z-10 flex-1 w-full max-w-3xl mx-auto px-4 sm:px-8 lg:px-16 bg-transparent"
     >
       <!-- About Section -->
-      <section
-        id="about"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#22d3ee] rounded-xl p-10 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-cyan-400 after:mx-auto after:mt-2"
-        >
-          About Me
-        </h2>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <img
-            src="me.jpeg"
-            alt="Evan next to lake with mountains"
-            class="border-4 border-black shadow-[4px_4px_0_0_#22d3ee] max-w-xs w-full rounded-lg mb-6 md:mb-0"
-          />
-          <div>
-            <p class="text-base leading-relaxed mb-4">
-              I’m Evan Barclay, an IT student and consultant from American Fork,
-              Utah. I have a strong passion for technology, learning, and
-              problem-solving, with hands-on experience across Mac OS, Windows,
-              and Linux systems. I’m proficient in Python, Google Apps Script,
-              and web development, and I enjoy troubleshooting, repairing, and
-              optimizing computers and AV systems.
-            </p>
-            <ul class="list-disc pl-5 text-base mb-2">
-              <li>IT Consultant for individuals & small businesses</li>
-              <li>Tech Intern at American Fork High School</li>
-              <li>Sandwich Artist at Subway</li>
-              <li>Starting Computer Science at UVU, Fall 2025</li>
-            </ul>
-            <p class="text-base">
-              I hold multiple CTE Skill Certificates in programming, web
-              development, digital media, and audio, as well as a Utah Food
-              Handler Permit. Outside of work and school, I’m an avid gamer,
-              tinkerer, and lifelong learner.
-            </p>
+      <div class="flex flex-col items-start gap-8 mb-14">
+        <!-- Image box (fixed width on md+, stacks on mobile) -->
+        <div class="w-full md:w-56 flex-none">
+          <div
+            class="border-4 border-black rounded-md overflow-hidden bg-black/10 shadow-[4px_4px_0_0_#22d3ee]"
+          >
+            <img
+              src="me.jpeg"
+              alt="Evan next to lake with mountains"
+              class="w-full h-56 md:h-64 object-cover block"
+            />
           </div>
+          <p
+            class="mt-3 text-center text-sm font-minecraftia uppercase text-black/75"
+          >
+            Evan J. Barclay
+          </p>
         </div>
-      </section>
+        <section
+          id="about"
+          class="flex-1 bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#22d3ee] rounded-xl p-10"
+        >
+          <h2
+            class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-cyan-400 after:mx-auto after:mt-2"
+          >
+            About Me
+          </h2>
+
+          <!-- Updated layout: image in an adjacent "box" beside the bio -->
+          <div class="flex flex-col md:flex-row items-start gap-8">
+            <!-- Bio content (flexible) -->
+            <div class="flex-1">
+              <p class="text-base leading-relaxed mb-4">
+                I’m Evan Barclay, an IT student and consultant from American
+                Fork, Utah. I have a strong passion for technology, learning,
+                and problem-solving, with hands-on experience across Mac OS,
+                Windows, and Linux systems. I’m proficient in Python, Google
+                Apps Script, and web development, and I enjoy troubleshooting,
+                repairing, and optimizing computers and AV systems.
+              </p>
+
+              <ul class="list-disc pl-5 text-base mb-4">
+                <li>IT Consultant for individuals &amp; small businesses</li>
+                <li>Tech Intern at American Fork High School</li>
+                <li>Sandwich Artist at Subway</li>
+                <li>Starting Computer Science at UVU, Fall 2025</li>
+              </ul>
+
+              <p class="text-base">
+                I hold multiple CTE Skill Certificates in programming, web
+                development, digital media, and audio, as well as a Utah Food
+                Handler Permit. Outside of work and school, I’m an avid gamer,
+                tinkerer, and lifelong learner.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
       <!-- Skills Section -->
       <section
         id="skills"
@@ -304,11 +329,15 @@
             </ul>
             <h3 class="font-minecraftia text-lg mb-2">Certifications</h3>
             <ul class="mb-4 text-base list-disc pl-5">
+              <li>CTE Skill Certificate — Computer Programming 1 (Dec 2022)</li>
+              <li>CTE Skill Certificate — Computer Programming 2 (May 2023)</li>
+              <li>CTE Skill Certificate — Web Development 1 (Dec 2023)</li>
+              <li>CTE Skill Certificate — Digital Media 1 (Nov 2024)</li>
+              <li>CTE Skill Certificate — Digital Media 2 (May 2025)</li>
               <li>
-                CTE Skill Certificates: Digital Media 1 & 2, Web Development 1,
-                Computer Programming 1 & 2, Digital Audio 1
+                Utah Food Handler Permit — Issued Feb 2024, Expires Feb 2027
+                (SOK00353547)
               </li>
-              <li>Utah Food Handler Permit (exp. 2027)</li>
             </ul>
           </div>
           <div class="flex-1">
@@ -449,9 +478,9 @@
       </section>
     </main>
     <footer
-      class="text-center bg-black text-white border-t-4 border-black uppercase font-bold tracking-widest py-8 mt-8 font-minecraftia shadow-lg"
+      class="relative z-20 text-center bg-black text-white border-t-4 border-black uppercase font-bold tracking-widest py-8 mt-8 font-minecraftia shadow-lg"
     >
-      <p class="text-lg">&copy; 2024 Evan Barclay</p>
+      <p class="text-lg">&copy; 2025 Evan Barclay</p>
     </footer>
   </body>
 </html>
