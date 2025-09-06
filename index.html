@@ -17,90 +17,175 @@
         font-family: "Minecraftia", monospace;
       }
 
-      /* Add Blob Animation Styles */
-      .blob-motion {
+      /* ---------- Animated background blobs ---------- */
+      .bg-blobs {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+        inset: 0;
         pointer-events: none;
-        z-index: 0;
-        filter: blur(8px); /* less blurry */
-        opacity: 0.6; /* slightly visible but not overpowering */
+        z-index: 0; /* behind content (header/main have z-10 / z-20) */
+        overflow: hidden;
       }
 
-      .blob {
+      .bg-blobs .blob {
         position: absolute;
-        width: 480px;
-        height: 480px;
-        border-radius: 50%;
-        background: red;
-        opacity: 0.95;
-        mix-blend-mode: normal; /* do not blend colors */
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.14);
-        animation: blob-drift 22s infinite ease-in-out;
+        border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%;
+        width: var(--size, 480px);
+        height: var(--size, 480px);
+        left: var(--left, 10%);
+        top: var(--top, 10%);
+        filter: blur(10px); /* soft edge but not excessive */
+        opacity: 0.92;
+        transform: translate3d(0, 0, 0);
+        will-change: transform, opacity;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #fff 0%,
+          rgba(255, 255, 255, 0.06) 12%,
+          transparent 60%
+        );
+        mix-blend-mode: normal;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+        animation: float var(--dur, 24s) ease-in-out infinite alternate;
+        animation-delay: var(--delay, 0s);
       }
 
-      /* overlap and stack via positioning + z-index */
-      .blob:nth-child(1) {
-        background: #22d3ee;
-        left: 20%;
-        top: 10%;
-        z-index: 1;
-        animation-delay: -2s;
+      /* Per-blob color, size, position and motion vectors */
+      .bg-blobs .blob:nth-child(1) {
+        --size: 520px;
+        --left: 6%;
+        --top: 6%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #22d3ee 0%,
+          #7dd3fc 40%,
+          transparent 62%
+        );
+        --dur: 20s;
+        --delay: -2s;
+        --tx: 56px;
+        --ty: -34px;
+      }
+      .bg-blobs .blob:nth-child(2) {
+        --size: 420px;
+        --left: 34%;
+        --top: 12%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          #a3e635 0%,
+          #d7f88c 38%,
+          transparent 64%
+        );
+        --dur: 26s;
+        --delay: -5s;
+        --tx: 68px;
+        --ty: 24px;
+      }
+      .bg-blobs .blob:nth-child(3) {
+        --size: 480px;
+        --left: 22%;
+        --top: 34%;
+        background: radial-gradient(
+          circle at 28% 32%,
+          #f472b6 0%,
+          #ffb1d9 40%,
+          transparent 66%
+        );
+        --dur: 22s;
+        --delay: -8s;
+        --tx: 36px;
+        --ty: 46px;
+      }
+      .bg-blobs .blob:nth-child(4) {
+        --size: 540px;
+        --left: 52%;
+        --top: 26%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #818cf8 0%,
+          #bfc8ff 40%,
+          transparent 64%
+        );
+        --dur: 32s;
+        --delay: -10s;
+        --tx: 72px;
+        --ty: -12px;
+      }
+      .bg-blobs .blob:nth-child(5) {
+        --size: 460px;
+        --left: 44%;
+        --top: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #facc15 0%,
+          #fff0a6 36%,
+          transparent 64%
+        );
+        --dur: 24s;
+        --delay: -6s;
+        --tx: 48px;
+        --ty: 56px;
+      }
+      .bg-blobs .blob:nth-child(6) {
+        --size: 400px;
+        --left: 64%;
+        --top: 40%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #38bdf8 0%,
+          #aee8ff 40%,
+          transparent 66%
+        );
+        --dur: 28s;
+        --delay: -12s;
+        --tx: 42px;
+        --ty: -44px;
       }
 
-      .blob:nth-child(2) {
-        background: #a3e635;
-        left: 40%;
-        top: 18%;
-        z-index: 2;
-        animation-delay: -4s;
-      }
-
-      .blob:nth-child(3) {
-        background: #f472b6;
-        left: 30%;
-        top: 38%;
-        z-index: 3;
-        animation-delay: -6s;
-      }
-
-      .blob:nth-child(4) {
-        background: #818cf8;
-        left: 50%;
-        top: 30%;
-        z-index: 4;
-        animation-delay: -8s;
-      }
-
-      .blob:nth-child(5) {
-        background: #facc15;
-        left: 45%;
-        top: 50%;
-        z-index: 5;
-        animation-delay: -10s;
-      }
-
-      .blob:nth-child(6) {
-        background: #38bdf8;
-        left: 60%;
-        top: 40%;
-        z-index: 6;
-        animation-delay: -12s;
-      }
-
-      /* gentler, smaller motion so blobs stay overlapping */
-      @keyframes blob-drift {
+      /* motion uses per-blob vars so each moves uniquely */
+      @keyframes float {
         0% {
-          transform: translate(0, 0) scale(1);
+          transform: translate3d(
+              calc(var(--scrollX, 0px) + 0px),
+              calc(var(--scrollY, 0px) + 0px),
+              0
+            )
+            rotate(0deg) scale(1);
+          opacity: 0.94;
         }
         50% {
-          transform: translate(40px, -30px) scale(1.03);
+          transform: translate3d(
+              calc(var(--scrollX, 0px) + var(--tx, 40px)),
+              calc(var(--scrollY, 0px) + var(--ty, -30px)),
+              0
+            )
+            rotate(12deg) scale(1.05);
+          opacity: 0.98;
         }
         100% {
-          transform: translate(-30px, 20px) scale(0.98);
+          transform: translate3d(
+              calc(var(--scrollX, 0px) + calc(var(--tx, 40px) * -0.6)),
+              calc(var(--scrollY, 0px) + calc(var(--ty, -30px) * -0.4)),
+              0
+            )
+            rotate(-8deg) scale(0.98);
+          opacity: 0.9;
+        }
+      }
+
+      /* subtle noise overlay inside the blob container to add texture */
+      .bg-blobs .noise {
+        position: absolute;
+        inset: 0;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        opacity: 0.04;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .bg-blobs .blob {
+          animation: none !important;
         }
       }
 
@@ -112,13 +197,14 @@
     </style>
   </head>
   <body class="text-black min-h-screen flex flex-col font-sans">
-    <div class="blob-motion">
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
+    <div class="bg-blobs" aria-hidden="true">
+      <div class="blob" data-speed="0.24" style="z-index: 1"></div>
+      <div class="blob" data-speed="0.16" style="z-index: 2"></div>
+      <div class="blob" data-speed="0.20" style="z-index: 3"></div>
+      <div class="blob" data-speed="0.10" style="z-index: 4"></div>
+      <div class="blob" data-speed="0.14" style="z-index: 5"></div>
+      <div class="blob" data-speed="0.18" style="z-index: 6"></div>
+      <div class="noise"></div>
     </div>
     <header
       id="home"
@@ -482,5 +568,52 @@
     >
       <p class="text-lg">&copy; 2025 Evan Barclay</p>
     </footer>
+    <!-- scroll-driven parallax for blobs (keeps float animation) -->
+    <script>
+      (function () {
+        const blobs = document.querySelectorAll(".bg-blobs .blob");
+        const vh = () =>
+          Math.max(
+            document.documentElement.clientHeight || 0,
+            window.innerHeight || 0
+          );
+
+        function updateVars() {
+          const scroll = window.scrollY || window.pageYOffset;
+          const h = vh();
+          const t = scroll / Math.max(h, 1) - 0.5; // -0.5 .. 0.5 roughly
+
+          blobs.forEach((b, i) => {
+            const speed = parseFloat(b.dataset.speed) || 0.12;
+            // compute small X/Y offsets based on scroll position and per-blob speed
+            const x = t * 100 * speed; // px
+            const y = t * 140 * speed; // px
+            b.style.setProperty("--scrollX", `${x}px`);
+            b.style.setProperty("--scrollY", `${y}px`);
+          });
+        }
+
+        let ticking = false;
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+              return;
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                updateVars();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        // also update on resize / initial load
+        window.addEventListener("resize", updateVars);
+        updateVars();
+      })();
+    </script>
   </body>
 </html>
