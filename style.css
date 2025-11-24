@@ -58,16 +58,26 @@ body {
 }
 
 .dark-mode-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
   color: var(--primary-text-color);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode-toggle:hover {
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: #ffffff;
 }
 
 #hero {
@@ -211,8 +221,39 @@ li {
 }
 
 .contact-links a:hover {
-  background-color: #2980b9;
+  background-color: #d9480f;
 }
+
+#playing {
+  text-align: center;
+}
+
+.playing-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.playing-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.game-card {
+  flex-shrink: 0;
+  width: 360px;
+  margin-right: 20px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
 footer {
   padding: 30px 0;

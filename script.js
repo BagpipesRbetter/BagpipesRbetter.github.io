@@ -4,7 +4,7 @@ const html = document.documentElement;
 // Check for saved dark mode preference
 const darkMode = localStorage.getItem("darkMode");
 
-if (darkMode === "enabled") {
+if (darkMode !== "disabled") {
   html.classList.add("dark-mode");
 }
 

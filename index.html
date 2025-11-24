@@ -22,22 +22,8 @@
           <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-moon"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+      </div>
+    </header>
       </div>
     </header>
 
@@ -188,6 +174,73 @@
         </div>
       </section>
 
+      <section id="playing">
+        <h2>Currently Playing</h2>
+        <p>
+          Quick links to what I'm playing right now — click a widget to open
+          Steam.
+        </p>
+        <div class="playing-viewport overflow-hidden">
+          <div class="playing-track flex gap-4 px-2 py-1">
+            <div class="game-card flex-none w-[320px] sm:w-[360px]">
+              <div class="rounded-md overflow-hidden bg-transparent">
+                <iframe
+                  class="w-full h-[190px] block"
+                  frameborder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  src="https://store.steampowered.com/widget/3045200/"
+                  title="Steam widget - app 3045200"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="game-card flex-none w-[320px] sm:w-[360px]">
+              <div class="rounded-md overflow-hidden bg-transparent">
+                <iframe
+                  class="w-full h-[190px] block"
+                  frameborder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  src="https://store.steampowered.com/widget/284160/"
+                  title="Steam widget - app 284160"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="game-card flex-none w-[320px] sm:w-[360px]">
+              <div class="rounded-md overflow-hidden bg-transparent">
+                <iframe
+                  class="w-full h-[190px] block"
+                  frameborder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  src="https://store.steampowered.com/widget/236390/"
+                  title="Steam widget - app 236390"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="game-card flex-none w-[320px] sm:w-[360px]">
+              <div class="rounded-md overflow-hidden bg-transparent">
+                <iframe
+                  class="w-full h-[190px] block"
+                  frameborder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  src="https://store.steampowered.com/widget/3527290/"
+                  title="Steam widget - app 3527290"
+                  allowtransparency="true"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact">
         <h2>Contact</h2>
         <div class="contact-links">
@@ -219,5 +272,21 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <button id="dark-mode-toggle" class="dark-mode-toggle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-moon"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
   </body>
 </html>
