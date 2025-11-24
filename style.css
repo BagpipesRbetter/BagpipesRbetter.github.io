@@ -1,16 +1,16 @@
 :root {
-  --background-color: #1a1a1a;
-  --card-color: #2c2c2c;
-  --primary-text-color: #ffffff;
-  --secondary-text-color: #a0a0a0;
-  --accent-color: #007bff;
-  --border-color: #444444;
+  --background-color: #f4f4f4;
+  --card-color: #ffffff;
+  --primary-text-color: #333333;
+  --secondary-text-color: #666666;
+  --accent-color: #3498db;
+  --border-color: #dddddd;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--primary-text-color);
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   line-height: 1.6;
 }
@@ -23,39 +23,17 @@ body {
 
 .header {
   background-color: var(--card-color);
-  padding: 40px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-right: 30px;
-  border: 3px solid var(--accent-color);
-}
-
-.header-text h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  font-weight: 700;
-}
-
-.header-text p {
-  font-size: 1.2rem;
-  color: var(--secondary-text-color);
-  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .nav a {
@@ -63,39 +41,58 @@ body {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
-  background-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
-main {
-  padding: 40px 0;
+#hero {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid var(--accent-color);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+  margin: 0;
 }
 
 section {
   background-color: var(--card-color);
   padding: 40px;
   border-radius: 8px;
-  margin-bottom: 50px;
-  border: 2px solid var(--accent-color);
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-align: center;
   color: var(--accent-color);
 }
 
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: disc;
+  padding-left: 20px;
 }
 
 li {
@@ -104,17 +101,17 @@ li {
 
 .skills-grid,
 .interests-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .skill-card,
 .interest-card {
   background-color: var(--background-color);
-  padding: 20px;
-  border-radius: 6px;
-  text-align: center;
+  padding: 12px 20px;
+  border-radius: 20px;
   font-weight: 500;
   border: 1px solid var(--border-color);
 }
@@ -128,15 +125,21 @@ li {
 .project-card {
   background-color: var(--background-color);
   padding: 30px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--border-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: var(--accent-color);
 }
 
@@ -144,9 +147,9 @@ li {
 .btn {
   display: inline-block;
   background-color: var(--accent-color);
-  color: var(--primary-text-color);
-  padding: 10px 15px;
-  border-radius: 6px;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s;
@@ -154,58 +157,42 @@ li {
 
 .project-card a:hover,
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
 }
 
 .resume-section {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .resume-section h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent-color);
+  margin-bottom: 15px;
 }
 
 .contact-links {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .contact-links a {
   background-color: var(--accent-color);
-  color: var(--primary-text-color);
-  padding: 10px 15px;
-  border-radius: 6px;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s;
 }
 
 .contact-links a:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
 }
 
 footer {
-  background-color: var(--card-color);
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
-  border-top: 1px solid var(--border-color);
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-image {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .nav {
-    justify-content: center;
-  }
 }
