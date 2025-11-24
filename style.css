@@ -236,7 +236,6 @@ li {
 .playing-track {
   display: flex;
   width: fit-content;
-  animation: scroll 30s linear infinite;
 }
 
 .game-card {
@@ -245,14 +244,7 @@ li {
   margin-right: 20px;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
+
 
 
 footer {
