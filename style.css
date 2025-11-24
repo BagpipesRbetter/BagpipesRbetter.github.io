@@ -224,24 +224,42 @@ li {
   background-color: #d9480f;
 }
 
-#playing {
-  text-align: center;
-}
-
-.playing-viewport {
+/* Marquee Styles */
+.marquee-container {
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
-.playing-track {
+.marquee-track {
   display: flex;
-  width: fit-content;
+  width: max-content;
+  gap: 20px;
+  padding-right: 20px;
+  /* Balance the gap for seamless loop */
+  animation: scroll 160s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 .game-card {
   flex-shrink: 0;
   width: 360px;
-  margin-right: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 
