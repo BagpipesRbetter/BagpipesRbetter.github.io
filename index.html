@@ -6,660 +6,200 @@
     <title>Evan Barclay - Portfolio</title>
     <link rel="icon" type="image/ico" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @font-face {
-        font-family: "Minecraftia";
-        src: url("fonts/Minecraftia.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-      }
-      .font-minecraftia {
-        font-family: "Minecraftia", monospace;
-      }
-
-      /* ---------- Animated background blobs ---------- */
-      .bg-blobs {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0; /* behind content (header/main have z-10 / z-20) */
-        overflow: hidden;
-      }
-
-      .bg-blobs .blob {
-        position: absolute;
-        border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%;
-        width: var(--size, 480px);
-        height: var(--size, 480px);
-        left: var(--left, 10%);
-        top: var(--top, 10%);
-        filter: blur(6px); /* slightly sharper for clarity */
-        opacity: 0.94;
-        transform: translate3d(0, 0, 0);
-        will-change: transform, opacity;
-        background: radial-gradient(
-          circle at 30% 30%,
-          #fff 0%,
-          rgba(255, 255, 255, 0.06) 12%,
-          transparent 60%
-        );
-        mix-blend-mode: normal;
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
-        animation: float var(--dur, 24s) cubic-bezier(0.22, 0.9, 0.3, 1)
-          infinite alternate;
-        animation-delay: var(--delay, 0s);
-      }
-
-      /* Per-blob color, size, position and motion vectors */
-      .bg-blobs .blob:nth-child(1) {
-        --size: 520px;
-        --left: 6%;
-        --top: 6%;
-        background: radial-gradient(
-          circle at 30% 30%,
-          #22d3ee 0%,
-          #7dd3fc 40%,
-          transparent 62%
-        );
-        --dur: 6s; /* much faster */
-        --delay: -0.6s;
-        --tx: 200px;
-        --ty: -140px;
-      }
-      .bg-blobs .blob:nth-child(2) {
-        --size: 420px;
-        --left: 34%;
-        --top: 12%;
-        background: radial-gradient(
-          circle at 35% 35%,
-          #a3e635 0%,
-          #d7f88c 38%,
-          transparent 64%
-        );
-        --dur: 7s;
-        --delay: -1.2s;
-        --tx: 260px;
-        --ty: 120px;
-      }
-      .bg-blobs .blob:nth-child(3) {
-        --size: 480px;
-        --left: 22%;
-        --top: 34%;
-        background: radial-gradient(
-          circle at 28% 32%,
-          #f472b6 0%,
-          #ffb1d9 40%,
-          transparent 66%
-        );
-        --dur: 6.5s;
-        --delay: -0.9s;
-        --tx: 180px;
-        --ty: 220px;
-      }
-      .bg-blobs .blob:nth-child(4) {
-        --size: 540px;
-        --left: 52%;
-        --top: 26%;
-        background: radial-gradient(
-          circle at 30% 30%,
-          #818cf8 0%,
-          #bfc8ff 40%,
-          transparent 64%
-        );
-        --dur: 8s;
-        --delay: -1.4s;
-        --tx: 300px;
-        --ty: -90px;
-      }
-      .bg-blobs .blob:nth-child(5) {
-        --size: 460px;
-        --left: 44%;
-        --top: 50%;
-        background: radial-gradient(
-          circle at 30% 30%,
-          #facc15 0%,
-          #fff0a6 36%,
-          transparent 64%
-        );
-        --dur: 6.5s;
-        --delay: -0.8s;
-        --tx: 220px;
-        --ty: 280px;
-      }
-      .bg-blobs .blob:nth-child(6) {
-        --size: 400px;
-        --left: 64%;
-        --top: 40%;
-        background: radial-gradient(
-          circle at 30% 30%,
-          #38bdf8 0%,
-          #aee8ff 40%,
-          transparent 66%
-        );
-        --dur: 7.5s;
-        --delay: -1.1s;
-        --tx: 190px;
-        --ty: -260px;
-      }
-
-      /* motion uses per-blob vars so each moves uniquely */
-      @keyframes float {
-        0% {
-          transform: translate3d(var(--scrollX, 0px), var(--scrollY, 0px), 0)
-            rotate(0deg) scale(1);
-          opacity: 0.94;
-        }
-        50% {
-          transform: translate3d(
-              calc(var(--scrollX, 0px) + var(--tx, 40px)),
-              calc(var(--scrollY, 0px) + var(--ty, -30px)),
-              0
-            )
-            rotate(12deg) scale(1.04);
-          opacity: 0.98;
-        }
-        100% {
-          transform: translate3d(
-              calc(var(--scrollX, 0px) + calc(var(--tx, 40px) * -0.55)),
-              calc(var(--scrollY, 0px) + calc(var(--ty, -30px) * -0.35)),
-              0
-            )
-            rotate(-8deg) scale(0.985);
-          opacity: 0.9;
-        }
-      }
-
-      /* subtle noise overlay inside the blob container to add texture */
-      .bg-blobs .noise {
-        position: absolute;
-        inset: 0;
-        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-        opacity: 0.04;
-        mix-blend-mode: overlay;
-        pointer-events: none;
-      }
-
-      /* Respect reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        .bg-blobs .blob {
-          animation: none !important;
-        }
-      }
-
-      body {
-        background-image: url("https://www.transparenttextures.com/patterns/square-bg.png");
-        position: relative;
-        overflow-x: hidden;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="text-black min-h-screen flex flex-col font-sans">
-    <header class="site-header">
-      <nav class="nav">
-        <a class="nav-logo" href="#home">Evan Barclay</a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#interests">Interests</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="bg-blobs" aria-hidden="true">
-      <div class="blob" data-speed="0.95" style="z-index: 1"></div>
-      <div class="blob" data-speed="0.78" style="z-index: 2"></div>
-      <div class="blob" data-speed="1.10" style="z-index: 3"></div>
-      <div class="blob" data-speed="0.65" style="z-index: 4"></div>
-      <div class="blob" data-speed="0.88" style="z-index: 5"></div>
-      <div class="blob" data-speed="0.92" style="z-index: 6"></div>
-      <div class="noise"></div>
-    </div>
-    <header
-      id="home"
-      class="relative z-20 text-center bg-black text-white border-b-4 border-black uppercase font-bold tracking-widest py-10 mb-12 font-minecraftia shadow-lg"
-    >
-      <h1 class="text-4xl mb-2 drop-shadow-lg">Hello, I'm Evan</h1>
-      <p class="text-lg opacity-85 tracking-wider">IT Student & Consultant</p>
-    </header>
-    <main
-      class="relative z-10 flex-1 w-full max-w-3xl mx-auto px-4 sm:px-8 lg:px-16 bg-transparent"
-    >
-      <!-- About Section -->
-      <div class="flex flex-col items-start gap-8 mb-14">
-        <!-- Image box (fixed width on md+, stacks on mobile) -->
-        <div class="w-full md:w-56 flex-none">
-          <div
-            class="border-4 border-black rounded-md overflow-hidden bg-black/10 shadow-[4px_4px_0_0_#22d3ee]"
-          >
-            <img
-              src="me.jpeg"
-              alt="Evan next to lake with mountains"
-              class="w-full h-56 md:h-64 object-cover block"
-            />
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <img src="me.jpeg" alt="Evan Barclay" class="profile-image" />
+          <div class="header-text">
+            <h1>Evan Barclay</h1>
+            <p>IT Student & Consultant</p>
           </div>
-          <p
-            class="mt-3 text-center text-sm font-minecraftia uppercase text-black/75"
-          >
-            Evan J. Barclay
-          </p>
         </div>
-        <section
-          id="about"
-          class="flex-1 bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#22d3ee] rounded-xl p-10"
-        >
-          <h2
-            class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-cyan-400 after:mx-auto after:mt-2"
-          >
-            About Me
-          </h2>
-
-          <!-- Updated layout: image in an adjacent "box" beside the bio -->
-          <div class="flex flex-col md:flex-row items-start gap-8">
-            <!-- Bio content (flexible) -->
-            <div class="flex-1">
-              <p class="text-base leading-relaxed mb-4">
-                I’m Evan Barclay, an IT student and consultant from American
-                Fork, Utah. I have a strong passion for technology, learning,
-                and problem-solving, with hands-on experience across Mac OS,
-                Windows, and Linux systems. I’m proficient in Python, Google
-                Apps Script, and web development, and I enjoy troubleshooting,
-                repairing, and optimizing computers and AV systems.
-              </p>
-
-              <ul class="list-disc pl-5 text-base mb-4">
-                <li>IT Consultant for individuals &amp; small businesses</li>
-                <li>Tech Intern at American Fork High School</li>
-                <li>Sandwich Artist at Subway</li>
-                <li>Starting Computer Science at UVU, Fall 2025</li>
-              </ul>
-
-              <p class="text-base">
-                I hold multiple CTE Skill Certificates in programming, web
-                development, digital media, and audio, as well as a Utah Food
-                Handler Permit. Outside of work and school, I’m an avid gamer,
-                tinkerer, and lifelong learner.
-              </p>
-            </div>
-          </div>
-        </section>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#interests">Interests</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <!-- Skills Section -->
-      <section
-        id="skills"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#a3e635] rounded-xl p-10 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-lime-400 after:mx-auto after:mt-2"
-        >
-          Skills
-        </h2>
-        <ul class="flex flex-wrap gap-4 justify-center mt-8 list-none p-0">
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            IT Support & Consulting
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Computer Repair
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            AV Systems & Networking
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Python & Google Apps Script
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Web Development
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Linux, macOS, Windows
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Teamwork & Communication
-          </li>
-          <li
-            class="bg-black text-white font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#a3e635] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Training & Documentation
-          </li>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I’m Evan Barclay, an IT student and consultant from American Fork,
+          Utah. I have a strong passion for technology, learning, and
+          problem-solving, with hands-on experience across Mac OS, Windows, and
+          Linux systems. I’m proficient in Python, Google Apps Script, and web
+          development, and I enjoy troubleshooting, repairing, and optimizing
+          computers and AV systems.
+        </p>
+        <ul>
+          <li>IT Consultant for individuals &amp; small businesses</li>
+          <li>Tech Intern at American Fork High School</li>
+          <li>Sandwich Artist at Subway</li>
+          <li>Starting Computer Science at UVU, Fall 2025</li>
         </ul>
+        <p>
+          I hold multiple CTE Skill Certificates in programming, web
+          development, digital media, and audio, as well as a Utah Food Handler
+          Permit. Outside of work and school, I’m an avid gamer, tinkerer, and
+          lifelong learner.
+        </p>
       </section>
-      <!-- Projects Section -->
-      <section
-        id="projects"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#f472b6] rounded-xl p-10 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-pink-400 after:mx-auto after:mt-2"
-        >
-          Projects
-        </h2>
-        <div class="flex flex-wrap gap-8 justify-center mt-8">
-          <article
-            class="bg-black text-white border-4 border-black shadow-[2px_2px_0_0_#f472b6] p-6 w-full max-w-xs font-minecraftia flex flex-col items-center rounded-lg hover:scale-105 transition"
-          >
-            <h3 class="text-lg font-bold uppercase mb-2">IT Consulting</h3>
-            <p class="mb-4 text-sm font-sans">
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">IT Support & Consulting</div>
+          <div class="skill-card">Computer Repair</div>
+          <div class="skill-card">AV Systems & Networking</div>
+          <div class="skill-card">Python & Google Apps Script</div>
+          <div class="skill-card">Web Development</div>
+          <div class="skill-card">Linux, macOS, Windows</div>
+          <div class="skill-card">Teamwork & Communication</div>
+          <div class="skill-card">Training & Documentation</div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>IT Consulting</h3>
+            <p>
               Provided on-site and remote IT support for individuals and small
               businesses, including troubleshooting, repair, networking, AV
               systems, and training.
             </p>
-          </article>
-          <article
-            class="bg-black text-white border-4 border-black shadow-[2px_2px_0_0_#f472b6] p-6 w-full max-w-xs font-minecraftia flex flex-col items-center rounded-lg hover:scale-105 transition"
-          >
-            <h3 class="text-lg font-bold uppercase mb-2">WW2 Tank Tribute</h3>
-            <p class="mb-4 text-sm font-sans">
-              A tribute to WWII tanks.<br />
-              <a
-                href="https://bagpipesrbetter.github.io/UDMAF"
-                target="_blank"
-                class="underline text-pink-300"
-                >View</a
-              >
-            </p>
-          </article>
-          <article
-            class="bg-black text-white border-4 border-black shadow-[2px_2px_0_0_#f472b6] p-6 w-full max-w-xs font-minecraftia flex flex-col items-center rounded-lg hover:scale-105 transition"
-          >
-            <h3 class="text-lg font-bold uppercase mb-2">PeruAI</h3>
-            <p class="mb-4 text-sm font-sans">
-              A chatbot using Ollama in Python.<br />
-              <a
-                href="https://github.com/BagpipesRbetter/PeruAi"
-                target="_blank"
-                class="underline text-pink-300"
-                >Source</a
-              >
-            </p>
-          </article>
-          <article
-            class="bg-black text-white border-4 border-black shadow-[2px_2px_0_0_#f472b6] p-6 w-full max-w-xs font-minecraftia flex flex-col items-center rounded-lg hover:scale-105 transition"
-          >
-            <h3 class="text-lg font-bold uppercase mb-2">SaintCon24 ESP32</h3>
-            <p class="mb-4 text-sm font-sans">
-              ESP32 badge recode project.<br />
-              <a
-                href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode"
-                target="_blank"
-                class="underline text-pink-300"
-                >Source</a
-              >
-            </p>
-          </article>
+          </div>
+          <div class="project-card">
+            <h3>WW2 Tank Tribute</h3>
+            <p>A tribute to WWII tanks.</p>
+            <a href="https://bagpipesrbetter.github.io/UDMAF" target="_blank"
+              >View Project</a
+            >
+          </div>
+          <div class="project-card">
+            <h3>PeruAI</h3>
+            <p>A chatbot using Ollama in Python.</p>
+            <a href="https://github.com/BagpipesRbetter/PeruAi" target="_blank"
+              >View Source</a
+            >
+          </div>
+          <div class="project-card">
+            <h3>SaintCon24 ESP32</h3>
+            <p>ESP32 badge recode project.</p>
+            <a
+              href="https://github.com/BagpipesRbetter/SaintCon24-ESP32-Recode"
+              target="_blank"
+              >View Source</a
+            >
+          </div>
         </div>
       </section>
-      <!-- Resume Section -->
-      <section
-        id="resume"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#818cf8] rounded-xl p-10 mb-14 text-center"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-indigo-400 after:mx-auto after:mt-2"
-        >
-          Resume
-        </h2>
-        <div
-          class="flex flex-col md:flex-row gap-8 justify-center items-start text-left"
-        >
-          <div class="flex-1">
-            <h3 class="font-minecraftia text-lg mb-2">Education</h3>
-            <ul class="mb-4 text-base list-disc pl-5">
-              <li>
-                American Fork High School, High School Diploma (2021–2025)
-              </li>
-            </ul>
-            <h3 class="font-minecraftia text-lg mb-2">Certifications</h3>
-            <ul class="mb-4 text-base list-disc pl-5">
-              <li>CTE Skill Certificate — Computer Programming 1 (Dec 2022)</li>
-              <li>CTE Skill Certificate — Computer Programming 2 (May 2023)</li>
-              <li>CTE Skill Certificate — Web Development 1 (Dec 2023)</li>
-              <li>CTE Skill Certificate — Digital Media 1 (Nov 2024)</li>
-              <li>CTE Skill Certificate — Digital Media 2 (May 2025)</li>
-              <li>
-                Utah Food Handler Permit — Issued Feb 2024, Expires Feb 2027
-                (SOK00353547)
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <h3 class="font-minecraftia text-lg mb-2">Work Experience</h3>
-            <ul class="mb-4 text-base list-disc pl-5">
-              <li>
-                <strong>IT Consultant</strong> (2023–Present): IT support for
-                individuals and small businesses
-              </li>
-              <li>
-                <strong>Tech Intern, American Fork High School</strong> (Aug–Dec
-                2024): Chromebook repair, inventory, tech support
-              </li>
-              <li>
-                <strong>Sandwich Artist, Subway</strong> (Feb 2024–Jul 2025):
-                Customer service, POS troubleshooting, teamwork
-              </li>
-            </ul>
-          </div>
+
+      <section id="resume">
+        <h2>Resume</h2>
+        <div class="resume-section">
+          <h3>Education</h3>
+          <ul>
+            <li>American Fork High School, High School Diploma (2021–2025)</li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <h3>Certifications</h3>
+          <ul>
+            <li>CTE Skill Certificate — Computer Programming 1 (Dec 2022)</li>
+            <li>CTE Skill Certificate — Computer Programming 2 (May 2023)</li>
+            <li>CTE Skill Certificate — Web Development 1 (Dec 2023)</li>
+            <li>CTE Skill Certificate — Digital Media 1 (Nov 2024)</li>
+            <li>CTE Skill Certificate — Digital Media 2 (May 2025)</li>
+            <li>
+              Utah Food Handler Permit — Issued Feb 2024, Expires Feb 2027
+              (SOK00353547)
+            </li>
+          </ul>
+        </div>
+        <div class="resume-section">
+          <h3>Work Experience</h3>
+          <ul>
+            <li>
+              <strong>IT Consultant</strong> (2023–Present): IT support for
+              individuals and small businesses
+            </li>
+            <li>
+              <strong>Tech Intern, American Fork High School</strong> (Aug–Dec
+              2024): Chromebook repair, inventory, tech support
+            </li>
+            <li>
+              <strong>Sandwich Artist, Subway</strong> (Feb 2024–Jul 2025):
+              Customer service, POS troubleshooting, teamwork
+            </li>
+          </ul>
         </div>
         <a
           href="https://bagpipesrbetter.github.io/Resume/"
           target="_blank"
-          class="inline-block bg-black text-white border-4 border-black px-8 py-3 font-bold uppercase shadow-[3px_3px_0_0_#818cf8] font-minecraftia hover:bg-white hover:text-black transition rounded mt-4"
-          >View My Full Resume</a
+          class="btn"
+          >View Full Resume</a
         >
-      </section>
-      <!-- Interests Section -->
-      <section
-        id="interests"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#facc15] rounded-xl p-10 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-yellow-400 after:mx-auto after:mt-2"
-        >
-          Interests
-        </h2>
-        <ul class="flex flex-wrap gap-4 justify-center mt-8 list-none p-0">
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Video Games
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Music
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Anime
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Movies
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            YouTube
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Emulation
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Modding
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Science
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Biology
-          </li>
-          <li
-            class="bg-black text-yellow-300 font-bold uppercase border-4 border-black px-6 py-3 shadow-[2px_2px_0_0_#facc15] font-minecraftia rounded hover:scale-105 transition"
-          >
-            Computers
-          </li>
-        </ul>
       </section>
 
-      <!-- Contact Section -->
-      <section
-        id="contact"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#38bdf8] rounded-xl p-10 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center relative after:content-[''] after:block after:w-16 after:h-1 after:bg-sky-400 after:mx-auto after:mt-2"
-        >
-          Contact
-        </h2>
-        <div class="flex flex-wrap gap-4 justify-center mt-8">
-          <a
-            href="mailto:evanjbarclay@gmail.com"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
-            >Email</a
-          >
-          <a
-            href="https://github.com/BagpipesRbetter"
-            target="_blank"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
+      <section id="interests">
+        <h2>Interests</h2>
+        <div class="interests-grid">
+          <div class="interest-card">Video Games</div>
+          <div class="interest-card">Music</div>
+          <div class="interest-card">Anime</div>
+          <div class="interest-card">Movies</div>
+          <div class="interest-card">YouTube</div>
+          <div class="interest-card">Emulation</div>
+          <div class="interest-card">Modding</div>
+          <div class="interest-card">Science</div>
+          <div class="interest-card">Biology</div>
+          <div class="interest-card">Computers</div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-links">
+          <a href="mailto:evanjbarclay@gmail.com">Email</a>
+          <a href="https://github.com/BagpipesRbetter" target="_blank"
             >GitHub</a
           >
-          <a
-            href="https://linkedin.com/in/evanjbarclay"
-            target="_blank"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
+          <a href="https://linkedin.com/in/evanjbarclay" target="_blank"
             >LinkedIn</a
           >
-          <a
-            href="https://instagram.com/evanjbarclay/"
-            target="_blank"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
+          <a href="https://instagram..com/evanjbarclay/" target="_blank"
             >Instagram</a
           >
           <a
             href="https://steamcommunity.com/id/BagpipesRbetter/"
             target="_blank"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
             >Steam</a
           >
-          <a
-            href="https://discordapp.com/users/773342404630675518"
-            target="_blank"
-            class="bg-black text-sky-300 border-4 border-black px-6 py-3 font-bold uppercase shadow-[2px_2px_0_0_#38bdf8] font-minecraftia rounded hover:bg-white hover:text-black transition"
+          <a href="https://discordapp.com/users/773342404630675518" target="_blank"
             >Discord</a
           >
         </div>
       </section>
-
-      <!-- Currently Playing / Game Links -->
-      <section
-        id="playing"
-        class="bg-white/80 backdrop-blur-sm border-4 border-black shadow-[8px_8px_0_0_#f472b6] rounded-xl p-6 mb-14"
-      >
-        <h2
-          class="text-2xl font-bold uppercase tracking-widest mb-4 font-minecraftia text-center after:content-[''] after:block after:w-16 after:h-1 after:bg-pink-400 after:mx-auto after:mt-2"
-        >
-          Currently Playing
-        </h2>
-
-        <p class="text-center text-sm text-black/75 mb-4">
-          Quick links to what I'm playing right now — click a widget to open
-          Steam.
-        </p>
-
-        <!-- viewport hides overflow, track is duplicated in JS for seamless loop -->
-        <div class="playing-viewport overflow-hidden">
-          <div class="playing-track flex gap-4 px-2 py-1">
-            <div class="game-card flex-none w-[320px] sm:w-[360px]">
-              <div class="rounded-md overflow-hidden bg-transparent">
-                <iframe
-                  class="w-full h-[190px] block"
-                  frameborder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  data-src="https://store.steampowered.com/widget/3045200/"
-                  title="Steam widget - app 3045200"
-                  allowtransparency="true"
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="game-card flex-none w-[320px] sm:w-[360px]">
-              <div class="rounded-md overflow-hidden bg-transparent">
-                <iframe
-                  class="w-full h-[190px] block"
-                  frameborder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  data-src="https://store.steampowered.com/widget/284160/"
-                  title="Steam widget - app 284160"
-                  allowtransparency="true"
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="game-card flex-none w-[320px] sm:w-[360px]">
-              <div class="rounded-md overflow-hidden bg-transparent">
-                <iframe
-                  class="w-full h-[190px] block"
-                  frameborder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  data-src="https://store.steampowered.com/widget/236390/"
-                  title="Steam widget - app 236390"
-                  allowtransparency="true"
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="game-card flex-none w-[320px] sm:w-[360px]">
-              <div class="rounded-md overflow-hidden bg-transparent">
-                <iframe
-                  class="w-full h-[190px] block"
-                  frameborder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  data-src="https://store.steampowered.com/widget/3527290/"
-                  title="Steam widget - app 3527290"
-                  allowtransparency="true"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </main>
-    <footer
-      class="relative z-20 text-center bg-black text-white border-t-4 border-black uppercase font-bold tracking-widest py-8 mt-8 font-minecraftia shadow-lg"
-    >
-      <p class="text-lg">&copy; 2025 Evan Barclay</p>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Evan Barclay</p>
+      </div>
     </footer>
-    <!-- scroll-driven parallax for blobs (keeps float animation) -->
-    <script src="script.js"></script>
   </body>
 </html>
