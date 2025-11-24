@@ -78,10 +78,10 @@ main {
 
 section {
   background-color: var(--card-color);
-  padding: 30px;
+  padding: 40px;
   border-radius: 8px;
-  margin-bottom: 40px;
-  border: 1px solid var(--border-color);
+  margin-bottom: 50px;
+  border: 2px solid var(--accent-color);
 }
 
 h2 {
@@ -106,13 +106,13 @@ li {
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+  gap: 20px;
 }
 
 .skill-card,
 .interest-card {
   background-color: var(--background-color);
-  padding: 15px;
+  padding: 20px;
   border-radius: 6px;
   text-align: center;
   font-weight: 500;
@@ -122,12 +122,12 @@ li {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
 .project-card {
   background-color: var(--background-color);
-  padding: 20px;
+  padding: 30px;
   border-radius: 6px;
   border: 1px solid var(--border-color);
 }
